@@ -1,5 +1,4 @@
 import socket
-import json
 from multiprocessing import Pool
 user = {'python':'123'}
 def handler(newsd):

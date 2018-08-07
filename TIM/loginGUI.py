@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import socket
-import json
+import TalkGUI
 def LoginFuc():
     s = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
     s.connect(('192.168.100.40', 9999))
@@ -10,6 +10,7 @@ def LoginFuc():
     re = str(s.recv(1024).decode('utf-8'))
     if  re== '1':
         tk.messagebox.showinfo('提示','登录成功')
+        TalkGUI.TalkSet()
     elif re == '2':
         tk.messagebox.showinfo('提示','用户名不存在')
     else:
